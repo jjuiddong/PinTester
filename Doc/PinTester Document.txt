@@ -1,0 +1,37 @@
+
+Pin Tester Doc
+
+
+1. protocol (Master board)
+
+	- Check protocol
+		- send 
+			- C + board number(1,2,3) + CRC
+		- recv
+			- C + board number(1,2,3) + result(F:fail, S:success) + CRC
+
+
+	- Initialize protocol
+		- send
+			- I + Led On/Off (1,0) + CRC
+
+
+	- pin test protocol
+		- send
+			- P + pin number(0 ~ 19) + CRC
+		- recv
+			- P + pin number(0 ~ 19) + result(F:fail, S:success) + CRC
+
+	- blink protocol
+		- send
+			- B + 0 + CRC
+
+	- led on protocol
+		- send
+			- L + pin number(0 ~ 19) + CRC
+
+
+	CRC:
+		- sum all bytes data % 256
+
+
